@@ -7,7 +7,7 @@ function ConfirmPopup() {
   if (!isPopup) return null;
 
   return (
-    <div className='w-full absolute bg-[rgba(0,0,0,.15)] h-full flex items-center justify-center'>
+    <div className='w-full absolute top-0 bg-[rgba(0,0,0,.15)] h-full flex items-center justify-center'>
       <div className='w-[300px] bg-white rounded p-8'>
         <h2 className='text-red-500 mb-4 text-2xl text-center'>
           Are you sure?

@@ -22,7 +22,11 @@ function TodoList() {
       })
       .map((todo: TodoItemType) => <TodoItem {...todo} key={todo.id} />);
 
-  return <div className='todo-list w-full mt-4'>{displayTodos()}</div>;
+  return (
+    <div className='todo-list w-full mt-4 max-h-[500px] overflow-auto'>
+      {displayTodos()}
+    </div>
+  );
 }
 
 export default TodoList;
