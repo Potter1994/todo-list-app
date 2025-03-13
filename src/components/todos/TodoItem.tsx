@@ -41,7 +41,9 @@ function TodoItem({ id, complete, text }: TodoItemType) {
 
       {!isEdit && (
         <p
-          className='text flex-1 my-auto mx-2 truncate'
+          className={`text flex-1 my-auto mx-2 truncate ${
+            complete ? "line-through text-gray-400" : ""
+          }`}
           onDoubleClick={() => {
             setIsEdit(true);
           }}
