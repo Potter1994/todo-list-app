@@ -26,12 +26,10 @@ type TodoProviderData = {
 const jsonString = localStorage.getItem("potter-todo-list");
 const defaultTodoData = JSON.parse(jsonString || "[]");
 
-const TodoContext = createContext<TodoProviderData | undefined>(
-  defaultTodoData
-);
+const TodoContext = createContext<TodoProviderData | undefined>(undefined);
 
 export function TodoProvider({ children }: { children: ReactNode }) {
-  const [todos, setTodos] = useState<TodoItemType[]>([]);
+  const [todos, setTodos] = useState<TodoItemType[]>(defaultTodoData);
   const [filterState, setFilterState] = useState<string>("All");
   const [isPopup, setIsPopup] = useState<boolean>(false);
   const [handleConfirm, setHandleConfirm] = useState<() => void>(() => {});
